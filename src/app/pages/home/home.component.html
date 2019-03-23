@@ -1,0 +1,142 @@
+<div class="accordion" id="accordionExample" *ngIf="toolsData">
+  <div class="card" *ngFor="let x of toolsData; let xindex = index">
+    <div class="card-header" id="headingOne{{ xindex }}">
+      <h2 class="mb-0">
+        <button
+          class="btn btn-link"
+          type="button"
+          data-toggle="collapse"
+          [attr.data-target]="'#collapseOne' + xindex"
+          aria-expanded="true"
+          aria-controls="collapseOne"
+        >
+          {{ x.tools_type_name }}
+        </button>
+      </h2>
+    </div>
+    <div
+      id="collapseOne{{ xindex }}"
+      class="collapse"
+      [attr.aria-labelledby]="'headingOne' + xindex"
+      data-parent="#accordionExample"
+    >
+      <div class="card-body">
+        <table class="table table-sm table-bordered text-center table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ลำดับ</th>
+              <th scope="col">ชื่ออุปกรณ์</th>
+              <th scope="col">จำนวน</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let xt of x.tools.split(','); let onxt = index">
+              <td>{{ onxt + 1 }}</td>
+              <td *ngFor="let item of xt.split(' '); let itemindex = index">
+                <span *ngIf="itemindex < 2">{{ item }}</span>
+                <button
+                  *ngIf="itemindex == 2"
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  (click)="selectItem(item, xt.split(' ')[0], xt.split(' ')[1])"
+                  data-toggle="modal"
+                  data-target="#shoppingModal"
+                >
+                  ยืมอุปกรณ์นี้
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  *ngIf="readShoping"
+  class="modal fade"
+  id="shoppingModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- Start Form -->
+      <form (ngSubmit)="onShoping(formShoping)" #formShoping="ngForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            {{ readShoping.name }}
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input
+            class="form-control mb-3"
+            type="text"
+            name="tools_id"
+            ngModel="{{ readShoping.id }}"
+            readonly
+          />
+          <div class="form-group" *ngIf="student">
+            <label for="exampleFormStudent">รหัสนักศึกษา</label>
+            <select
+              class="form-control"
+              id="exampleFormStudent"
+              name="std_id"
+              ngModel
+              required
+            >
+              <option value="">-- เลือก --</option>
+              <option *ngFor="let x of student" [value]="x.id">{{
+                x.id
+              }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormAmount"
+              >จำนวนที่ต้องการยืม (จำนวนที่เหลือ :
+              {{ readShoping.amount }})</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="exampleFormAmount"
+              name="amount"
+              required
+              ngModel="1"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            ปิด
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="
+              !formShoping.value.amount != 0 ||
+              formShoping.invalid ||
+              formShoping.value.amount > readShoping.amount
+            "
+          >
+            ยืนยัน
+          </button>
+        </div>
+      </form>
+      <!-- End Form -->
+    </div>
+  </div>
+</div>

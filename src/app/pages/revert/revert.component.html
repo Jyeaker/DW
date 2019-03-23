@@ -1,0 +1,64 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        Reverting
+      </div>
+      <div class="card-body">
+        <!-- Start Select Student -->
+        <div class="form-group" *ngIf="student">
+          <label for="exampleFormStudent">รหัสนักศึกษา</label>
+          <select
+            class="form-control"
+            id="exampleFormStudent"
+            [(ngModel)]="selectStudent"
+            (change)="studentBorrow()"
+            required
+          >
+            <option value="">-- เลือก --</option>
+            <option *ngFor="let x of student" [value]="x.id">{{ x.id }}</option>
+          </select>
+        </div>
+        <!-- End Select Student -->
+        <div *ngIf="selectStudent !== ''">
+          <table
+            class="table table-sm table-bordered text-center table-hover"
+            *ngIf="borrowList"
+          >
+            <thead>
+              <tr>
+                <th scope="col">เลขที่การยืม</th>
+                <th scope="col">ชื่อผู้ยืม</th>
+                <th scope="col">จำนวน</th>
+                <th scope="col">ชื่ออุปกรณ์</th>
+                <th scope="col">วันที่ยืม</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of borrowList">
+                <td>{{ x.borrowId }}</td>
+                <td>{{ x.fname }}&nbsp;&nbsp;{{ x.lname }}</td>
+                <td>{{ x.borrowAmount }}</td>
+                <td>{{ x.toolsName }}</td>
+                <td>{{ x.borrowDate }}</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    (click)="onRevert(x.borrowId, x.toolsId, x.borrowAmount)"
+                  >
+                    คืนอุปกรณ์
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="borrowList == null" class="text-center">
+            ไม่พบการยืมอุปกรณ์
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
