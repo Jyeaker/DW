@@ -28,11 +28,14 @@
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           จัดการอุปกรณ์
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/toolsinsert']">เพิ่มรายการอุปกรณ์</a>
          
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" [routerLink]="['/student']">แก้ไขรายการอุปกรณ์</a>
+          <a class="dropdown-item" [routerLink]="['/toolsupdate']">แก้ไขรายการอุปกรณ์</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/toolstype']">เพิ่มประเภทอุปกรณ์</a>
         </div>
       </li>
 
