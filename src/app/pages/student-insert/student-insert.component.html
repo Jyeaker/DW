@@ -1,4 +1,4 @@
-<form (ngSubmit)="onInsert(formInsertStudent)" #formInsertStudent="ngForm">
+<form (ngSubmit)="onInsert(formInsertStudent)" #formInsertStudent="ngForm"> <!-- ngSubmit เมื่อกกดยืนยัน ไปยังฟอมอินเสิท st -->
   <div class="form-group">
     <label for="exampleFormControlInput1">รหัสนักศึกษา</label>
     <input
@@ -9,7 +9,7 @@
       name="std_id"
       ngModel
       required
-    />
+    />  <!-- ngmodel เป็นฟอมของแองกูล่า-->
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">ชื่อ</label>
@@ -51,7 +51,7 @@
     type="submit"
     class="btn btn-primary"
     [disabled]="formInsertStudent.invalid"
-  >
+  > <!-- กดยืนยันไม่ได้ถ้าฟอม ผิดพลาด-->
     Submit
   </button>
 </form>

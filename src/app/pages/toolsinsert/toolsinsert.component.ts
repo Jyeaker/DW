@@ -1,13 +1,13 @@
 import { NgForm } from "@angular/forms";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-student-insert",
-  templateUrl: "./student-insert.component.html",
-  styleUrls: ["./student-insert.component.scss"]
+  selector: 'app-toolsinsert',
+  templateUrl: './toolsinsert.component.html',
+  styleUrls: ['./toolsinsert.component.scss']
 })
-export class StudentInsertComponent implements OnInit {
+export class ToolsinsertComponent implements OnInit {
   private URL: string = "http://127.0.0.1/hello_cpe/api/";
   constructor(private http:HttpClient) {}
 
@@ -19,14 +19,15 @@ export class StudentInsertComponent implements OnInit {
       "Content-Type": "application/x-www-form-urlencoded"
     });
 
+
     let params = new HttpParams()
-      .set("std_id", data.value.std_id) //สีส้มตรงกับ php
-      .set("fname", data.value.fname)
-      .set("lname", data.value.lname)
-      .set("phone", data.value.phone);
+      .set("t_id", data.value.t_id)
+      .set("t_name", data.value.t_name)
+      .set("tt_id", data.value.tt_id)
+      .set("amount", data.value.amount);
 
     this.http
-      .post(`${this.URL}insert/student.php`, params.toString(), {
+      .post(`${this.URL}insert/tools.php`, params.toString(), {
         headers: headers
       })
       .toPromise()
@@ -34,7 +35,7 @@ export class StudentInsertComponent implements OnInit {
         console.log(value);
         if (value.result) {
  
-          alert("เพิ่มสำเร็จ");
+          alert("เพิ่มอุปกรณ์สำเร็จ");
 
         }
       })

@@ -1,0 +1,60 @@
+<form (ngSubmit)="onInsert(formInsertStudent)" #formInsertStudent="ngForm">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">รหัสอุปกรณ์</label>
+    <input
+      type="int"
+      class="form-control"
+      id="exampleFormControlInput1"
+      
+      name="t_id"
+      ngModel
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">ชื่ออุปกรณ์</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+     
+      name="t_name"
+      ngModel
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">ประเภทอุปกรณ์</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      
+      name="tt_id"
+      ngModel
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">จำนวน</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+     
+      name="amount"
+      ngModel
+      required
+    />
+  </div>
+
+  
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="formInsertStudent.invalid"
+  >
+    Submit
+  </button>
+</form>

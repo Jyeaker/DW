@@ -10,9 +10,11 @@ import { RevertComponent } from './pages/revert/revert.component';
 import { StudentComponent } from './pages/student/student.component';
 import { StudentInsertComponent } from './pages/student-insert/student-insert.component';
 import { StudentupdateComponent } from './pages/studentupdate/studentupdate.component';
+import { ToolsinsertComponent } from './pages/toolsinsert/toolsinsert.component';
+import { ToolsupdateComponent } from './pages/toolsupdate/toolsupdate.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RevertComponent, StudentComponent, StudentInsertComponent, StudentupdateComponent],
+  declarations: [AppComponent, HomeComponent, RevertComponent, StudentComponent, StudentInsertComponent, StudentupdateComponent, ToolsinsertComponent, ToolsupdateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
