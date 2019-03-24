@@ -24,6 +24,28 @@
           >คืนอุปกรณ์
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['#']" routerLinkActive="active"
+          >จัดการอุปกรณ์
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          จัดการข้อมูลนักศึกษา
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/student_insert']">เพิ่มข้อมูลนักศึกษา</a>
+          <a class="dropdown-item" href="#">แก้ไขข้อมูลนักศึกษา</a>
+          <a class="dropdown-item" href="#">ลบข้อมูลนักศึกษา</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/student']">ดูข้อมูลนักศึกษา</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/revert']" routerLinkActive="active"
+          >ผู้จัดทำ
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
