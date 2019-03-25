@@ -36,7 +36,7 @@ export class ToolsinsertComponent implements OnInit {
         if (value.result) {
  
           alert("เพิ่มอุปกรณ์สำเร็จ");
-
+          location.reload();
         }
       })
       .catch((reason: any) => {

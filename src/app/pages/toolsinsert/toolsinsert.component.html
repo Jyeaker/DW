@@ -8,6 +8,8 @@
       
       name="t_id"
       ngModel
+      onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
+      placeholder="กรอกเฉพาะตัวเลขเท่านั้น"
       required
     />
   </div>
@@ -32,6 +34,8 @@
       
       name="tt_id"
       ngModel
+      onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
+      maxlength="2" placeholder="กรอกเฉพาะตัวเลขเท่านั้น"
       required
     />
   </div>
@@ -45,6 +49,8 @@
      
       name="amount"
       ngModel
+      onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
+      placeholder="กรอกเฉพาะตัวเลขเท่านั้น"
       required
     />
   </div>

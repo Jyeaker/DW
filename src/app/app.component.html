@@ -1,5 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+
+  <a class="navbar-brand" href="#" >
+    <img src="../assets/newlogo.png" alt="" width="101px" height="81px">
+  </a>
   <button
     class="navbar-toggler"
     type="button"
@@ -11,7 +14,9 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-
+  
+  
+  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -19,6 +24,7 @@
           >ยืมอุปกรณ์
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/revert']" routerLinkActive="active"
           >คืนอุปกรณ์
@@ -48,11 +54,11 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/student_insert']">เพิ่มข้อมูลนักศึกษา</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" [routerLink]="['/student']">ดูข้อมูลนักศึกษา</a>
+          <a class="dropdown-item" [routerLink]="['/studentupdate']">ดูข้อมูลนักศึกษา</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/revert']" routerLinkActive="active"
+        <a class="nav-link" [routerLink]="['/profild']" routerLinkActive="active"
           >ผู้จัดทำ
         </a>
       </li>
@@ -64,3 +70,5 @@
   <router-outlet></router-outlet>
 </div>
 <br /><br />
+
+

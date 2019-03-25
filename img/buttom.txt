@@ -1,0 +1,5 @@
+Edit
+<input type="image" name="imageField" id="imageField" src="img/tt_edit4.jpg" width="50" height="35"/>
+
+Delect
+<input type="image" name="imageField2" id="imageField2" src="img/del1.jpg" width="50" height="35" onclick="return confirm('Delete tools type ?')"/>

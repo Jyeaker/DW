@@ -35,7 +35,7 @@ export class StudentInsertComponent implements OnInit {
         if (value.result) {
  
           alert("เพิ่มสำเร็จ");
-
+          location.reload();
         }
       })
       .catch((reason: any) => {

@@ -8,6 +8,7 @@
       placeholder="กรอกเฉพาะตัวเลข"
       name="std_id"
       ngModel
+      onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
       required
     />  <!-- ngmodel เป็นฟอมของแองกูล่า-->
   </div>
@@ -17,7 +18,6 @@
       type="text"
       class="form-control"
       id="exampleFormControlInput1"
-      placeholder="ใส่ได้เฉพาะภาษาไทย"
       name="fname"
       ngModel
       required
@@ -29,7 +29,6 @@
       type="text"
       class="form-control"
       id="exampleFormControlInput1"
-      placeholder="ใส่ได้เฉพาะภาษาไทย"
       name="lname"
       ngModel
       required
@@ -44,6 +43,7 @@
       placeholder="กรอกเฉพาะตัวเลข"
       name="phone"
       ngModel
+      onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
       required
     />
   </div>

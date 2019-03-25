@@ -80,10 +80,14 @@ export class ToolsupdateComponent implements OnInit {
         .get(`${this.URL}/delete/tools.php?id=${id}`)
         .toPromise()
         .then((value: any) => {
-          console.log(value);
-          this.getTools("");
-          alert(`ลบ ${name} สำเร็จ`);
-        })
+          if(value.result){
+            console.log(value);
+            this.getTools("");
+            alert(`ลบ ${name} สำเร็จ`);
+            }else{
+              alert(`ลบ ${name} ไม่ได้เนื่องจาก ${name} เป็นคีย์นอกของตาราง ยืม-คืน`)
+            }
+          })
         .catch((reason: any) => {
           console.log(reason);
         });
