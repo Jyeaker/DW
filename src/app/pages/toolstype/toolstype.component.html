@@ -5,7 +5,8 @@
       type="int"
       class="form-control"
       id="exampleFormControlInput1"
-      
+      onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
+      maxlength="2"
       name="tt_id"
       ngModel
       required

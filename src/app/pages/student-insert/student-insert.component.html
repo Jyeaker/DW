@@ -9,6 +9,7 @@
       name="std_id"
       ngModel
       onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
+      maxlength="12"
       required
     />  <!-- ngmodel เป็นฟอมของแองกูล่า-->
   </div>
@@ -44,6 +45,7 @@
       name="phone"
       ngModel
       onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" 
+      maxlength="10"
       required
     />
   </div>
