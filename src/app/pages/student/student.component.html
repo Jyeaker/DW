@@ -4,32 +4,125 @@
   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" >
     <div class="card-header">ประวัติผู้จัดทำ</div>
     <div class="card-body" style="text-align: center">
-      <h5 class="card-title">นายเมธา  ประทุมภา</h5>
-     <img src="../../../assets/rmuti.png" alt=""  >
-      <p class="card-text">งานที่ได้รับมอบหมาย ส่วนของการยืม-คืนอุปกรณ์</p>
+      <h5 class="card-title">
+          <!-- Default dropright button -->
+<div class="btn-group dropright">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          งานที่ได้รับมอบหมาย
+        </button>
+        <div class="dropdown-menu">
+          <!--ใส่ข้อมูล คิวรี่-->
+          <table class="table table-sm table-bordered text-center table-hover " >
+          <thead>
+          <tr>
+                <th scope="col">รหัสอุปกรณ์</th>
+                <th scope="col">ชื่ออุปกรณ์</th>
+                <th scope="col">จำนวนที่ถูกยืม</th>
+          </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let x of toolData">
+                  <td>{{ x.tools_id }}</td>
+                  <td>{{ x.tools_name }}</td>
+                  <td>{{ x.amount }}</td>
+                  </tr>
+                  </tbody>
+        </table>
+        </div>
+      </div>
+         </h5>
+     <img src="../../../assets/toy.jpg" alt=""  width="200px" height="300px">
+      <p class="card-text">  นายเมธา  ประทุมภา </p>
+      
      
     </div>
   </div></th>
-  
+
+  <!-- ---------------------------------------------------------------------------------------------------------->
   
   
   <th>
-  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">ประวัติผู้จัดทำ</div>
-    <div class="card-body">
-      <h5 class="card-title">นายจอมพล  กระจ่างโพธิ์</h5>
-      <p class="card-text">งานที่ได้รับมอบหมาย ส่วนของการยืม-คืนอุปกรณ์</p>
-    </div>
-  </div>
-  </th>
-  
-  <th>
-  <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-    <div class="card-header">ประวัติผู้จัดทำ</div>
-    <div class="card-body">
-      <h5 class="card-title">นายวันชัย  สีหะวงษ์</h5>
-      <p class="card-text">งานที่ได้รับมอบหมาย ส่วนของการยืม-คืนอุปกรณ์</p>
-    </div>
-  </div></th>
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;" >
+                <div class="card-header">ประวัติผู้จัดทำ</div>
+                <div class="card-body" style="text-align: center">
+                  <h5 class="card-title">
+                      <!-- Default dropright button -->
+            <div class="btn-group dropright">
+              <button type="button" class="btn bg-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                งานที่ได้รับมอบหมาย
+              </button>
+                    <div class="dropdown-menu">
+                      <!--ใส่ข้อมูล คิวรี่-->
+                      <table class="table table-sm table-bordered text-center table-hover " >
+                      <thead>
+                      <tr>
+                            <th scope="col">สถานะ</th>
+                           
+                            <th scope="col">วันที่</th>
+                            <th scope="col">ชื่อและจำนวน</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let x of toolsData">
+                              <td>{{ x.status }}</td>
+                              
+                              <td>{{ x.date }}</td>
+                              <td>{{ x.tools }}</td>
+                              </tr>
+                              </tbody>
+                    </table>
+                    </div>
+                  </div>
+                     </h5>
+                     <img src="../../../assets/joke.jpg" alt=""  width="200px" height="300px">
+                  <p class="card-text">  นายจอมพล  กระจ่างโพธิ์ </p>
+                  
+                 
+                </div>
+              </div></th>
+              
+  <!-- ---------------------------------------------------------------------------------------------------->
+        <th>
+                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                        <div class="card-header">ประวัติผู้จัดทำ</div>
+                        <div class="card-body" style="text-align: center">
+                          <h5 class="card-title">
+                              <!-- Default dropright button -->
+                    <div class="btn-group dropright">
+                      <button type="button" class="btn bg-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        งานที่ได้รับมอบหมาย
+                      </button>
+                            <div class="dropdown-menu">
+                              <!--ใส่ข้อมูล คิวรี่-->
+                              <table class="table table-sm table-bordered text-center table-hover " >
+                              <thead>
+                              <tr>
+                                    <th scope="col">STATUS</th>
+    
+                                    <th scope="col">date</th>
+                                    <th scope="col">sum</th>
+                                    <th scope="col">fname</th>
+                                    <th scope="col">lname</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                    <tr *ngFor="let x of amountData">
+                                      <td>{{ x.STATUS }}</td>
+                                      <td>{{ x.date }}</td>
+                                      <td>{{ x.sum }}</td>
+                                      <td>{{ x.firstname }}</td>
+                                      <td>{{ x.lastname }}</td>
+                                      </tr>
+                                      </tbody>
+                            </table>
+                            </div>
+                          </div>
+                             </h5>
+                             <img src="../../../assets/jiw.jpg" alt=""  width="200px" height="300px">
+                          <p class="card-text">  นายวันชัย  สีหะวงษ์ </p>
+                          
+                         
+                        </div>
+                      </div></th>
   </tr>
   </table>

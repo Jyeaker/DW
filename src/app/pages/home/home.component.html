@@ -128,7 +128,10 @@
             [disabled]="
               !formShoping.value.amount != 0 ||
               formShoping.invalid ||
-              formShoping.value.amount > 3
+              formShoping.value.amount > readShoping.amount ||
+              formShoping.value.amount > 3 ||
+              formShoping.value.amount < 0
+
             "
           >
             ยืนยัน
